@@ -30,24 +30,26 @@ untuk menampilkan informasi ke standard output device (stdout), bisa dilakukan d
 
 contoh-contoh penggunaan function print: 
 
-`print() # print empty line`
+```
+print() # print empty line
 
-`print(2) # print 2` 
+print(2) # print 2 
 
-`print('Hello World') # print Hello World`
+print('Hello World') # print Hello World
 
-`print('Hello', 'World') # print Hello World`
+print('Hello', 'World') # print Hello World
 
-`print('Hello', 'World', sep=' > ') # print Hello > World`
+print('Hello', 'World', sep=' > ') # print Hello > World
 
-`name = 'Helen # create variable name`
-`print('Hello', name) # print Hello Helen`
+name = 'Helen # create variable name
+print('Hello', name) # print Hello Helen
 
-`print('Hello %s' % (name)) # print Hello Helen [% style format]`
+print('Hello %s' % (name)) # print Hello Helen [% style format]
 
-`print('Hello {}'.format(name)) # print Hello Helen [formatted string]`
+print('Hello {}'.format(name)) # print Hello Helen [formatted string]
 
-`print(f'Hello {name}') # print Hello Helen [f-strings]`
+print(f'Hello {name}') # print Hello Helen [f-strings]
+```
 
 contoh program: 
 
