@@ -30,7 +30,7 @@ untuk menampilkan informasi ke standard output device (stdout), bisa dilakukan d
 
 contoh-contoh penggunaan function print: 
 
-```
+``` python
 print() # print empty line
 
 print(2) # print 2 
@@ -58,7 +58,7 @@ Hitung Persamaan y = 2x + 5. nilai x diinput oleh user.
 
 solusi:
 
-```
+``` python
 print('Hitung Persamaan y = 2x + 5')
 print('---------------------------\n')
 
