@@ -97,7 +97,7 @@ elif nilai < 70:
 
 pada python, keyword if juga dapat digunakan sebagai if expression.
 
-`var_name = <truthy statement> if <condition> <falsy statement>`
+`var_name = <truthy statement> if <condition> else <falsy statement>`
 
 if expression ini mirip dengan operator ternary pada bahasa pemrograman c [ `(condition) ? <truthy statement> : <falsy statements>` ].
 
@@ -124,7 +124,7 @@ x = int(input('x ? '))
 y = int(input('y ? '))
 z = int(input('z ? '))
 
-terbesar = x if x > y else z
+terbesar = x if x > y else y
 terbesar = terbesar if terbesar > z else z
 
 print(f'bilangan terbesar di antara {x}, {y} dan {z} adalah: {terbesar}')
