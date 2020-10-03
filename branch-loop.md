@@ -130,6 +130,8 @@ terbesar = terbesar if terbesar > z else z
 print(f'bilangan terbesar di antara {x}, {y} dan {z} adalah: {terbesar}')
 ```
 
+catatan: script program python di atas akan jalan normal, jika input dari user valid. jika user menginput data yang tidak valid. akan raise ValueError Exception. untuk menghandle exception ini, bisa ditambahkan block Exception Handling try ... except ... atau bisa juga dilakukan dengan melakukan validasi terhadap data yang diinput oleh user dengan menggunakan if statement.
+
 
 ## Looping
 
