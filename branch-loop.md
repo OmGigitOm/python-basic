@@ -135,3 +135,226 @@ catatan: script program python di atas akan jalan normal, jika input dari user v
 
 ## Looping
 
+disebut juga `statement perulangan/iterasi`. dengan statement ini, anda bisa memberi perintah ke komputer untuk mengeksekusi blok perintah yang sama secara berulang-ulang selama suatu kondisi terpenuhi.
+
+ada 2 (dua) statement yang didukung, yaitu:
+* `while statement`
+* `for statement`
+
+## while statement
+
+bentuk umum:
+
+```python
+while <conditions>:
+    <statements>
+[else:
+    <statements>]
+```
+
+pada penggunaan while, block perintah dalam while akan dieksekusi selama kondisi yang ada masih bernilai truthy. block else di dalam while bersifat opsional. jika terdapat block else, dan jika block while selesai secara normal, maka block else akan dieksekusi kemudian. namun, jika block while berakhir secara prematur, misalkan karena break, maka block else akan diabaikan.
+
+karena sifat eksekusi dari statement perulangan while yang didasarkan pada kondisi, biasanya, didalam membentuk konstruksi statement perulangan, ada 3 hal yang harus diperhatikan. 
+
+* initial value dari kondisi
+* kondisi, dimana selama memenuhi syarat (truthy), perulangan akan terus dieksekusi
+* ekpresi yang membawa initial value dari kondisi agar memenuhi syarat berhenti
+
+contoh, misalkan anda diminta untuk mencetak kata 'Hello' sebanyak 5x. 
+
+```python
+# set var. i sebagai counter 
+# untuk menghitung sudah berapa kali kata 'Hello' tercetak 
+# i akan dicacah dari 1 - 5
+
+i = 1 # initial value 
+while i <= 5: # condition
+    print('Hello')
+    i += 1 # ekspresi 
+
+# atau jika anda ingin mencetak nomor barisnya juga 
+i = 1 # initial value 
+while i <= 5: # condition
+    print(f'{i}. Hello')
+    i += 1 # ekspresi 
+
+# atau jika dilengkapi dengan block else
+
+i = 1 # initial value 
+while i <= 5: # condition
+    print(f'{i}. Hello')
+    i += 1 # ekspresi 
+else:
+    print('selesai')
+```
+
+pada contoh di atas ini, digunakan variable i untuk mencacah banyak kali kata 'Hello' yang sudah tercetak. pada contoh di atas, kata 'Hello' akan dicetak sepanjang kondisinya bernilai truthy (sebanyak 5x). dan jika terdapat block else, maka isi block else akan dieksekusi juga, setelah perulangannya selesai. 
+
+contoh code terakhir di atas akan menghasilkan output:
+
+```
+1. Hello
+2. Hello
+3. Hello
+4. Hello
+5. Hello
+selesai
+```
+
+## for statement
+
+bentuk umum:
+
+```python
+for <variable> in sequence:
+    <statements>
+[else:
+    <statements>]
+```
+
+for digunakan untuk meng-iterasi elemen-elemen yang ada pada sebuah sequence (rangkaian data seperti list, string, dict dan lain-lain). sama seperti while, for juga bisa memiliki block else. dan aturan eksekusinya juga sama dengan yang ada pada while.
+
+sedikit berbeda dengan while, for digunakan untuk meng-iterasi elemen-elemen yang ada pada sebuah sequence (kelompok data). 
+
+contoh, misalkan cetak semua karakter yang ada pada string 'Python', satu karakter per baris.
+
+```python
+kata = 'Python'
+
+for index in len(kata):
+    print(kata[index])
+
+# atau 
+
+for karakter in kata:
+    print(karakter)
+
+# atau jika anda ingin mencetak nomor barisnya juga
+for index in len(kata):
+    print(f'{index+1}. {kata[index]}')
+
+# atau 
+
+for index, karakter in enumerate(kata):
+    print(f'{index+1}. {karakter}')
+
+# atau jika dengan block else 
+for index in len(kata):
+    print(f'{index+1}. {kata[index]}')
+else:
+    print('selesai')
+```
+
+contoh code terakhir di atas akan menghasilkan output: 
+
+```
+1. P
+2. y
+3. t
+4. h
+5. o
+6. n
+selesai
+```
+
+## range function
+
+salah satu cara untuk mengenerate sequence number dapat dilakukan dengan menggunakan function range. 
+
+bentuk umum:
+
+`range(start, stop, step)`
+
+* start => nomor start. inclusive
+* stop => nomor stop. exclusive
+* step => next number, berapa step, default adalah 1
+
+contoh:
+
+```python
+# generate range from 0,1,2,3,4,5,6,7,8,9
+range(10) 
+# generate range from 1 to 10 
+range(1, 11)
+# generate range from 1, 3, 5, 6, 9
+range(1, 10, 2)
+```
+
+## Loop Control Statement
+
+di dalam menggunakan statement perulangan, kita dapat mengatur alur perulangan seperti men-skip sebuah iterasi ataupun men-stop sebuah perulangan.
+
+untuk men-skip sebuah iterasi, dan lanjut ke iterasi berikutnya, anda bisa menggunakan statement continue.
+
+contoh: 
+
+```python
+for i in range(1, 11):
+    if i % 2:
+        continue
+    print(i, end=' ')
+print()
+
+# atau
+
+for i in range(1, 11):
+    if i % 2:
+        continue
+    print(i, end=' ')
+else:
+    print('\nselesai')
+```
+
+pada contoh di atas, akan dihasilkan output 1 3 5 9 dan jika ada block else, maka akan tercetak juga kata selesai. 
+
+untuk men-stop sebuah perulangan sebelum kondisinya terpenuhi, anda bisa menggunakan statement break.
+
+contoh:
+
+```python
+for i in range(1, 11):
+    print(i, end=' ')
+    if i == 5:
+        break
+else:
+    print('selesai')
+print()
+```
+
+contoh di atas ini akan mencetak output 1 2 3 4 5. dan karena perulangan berakhir secara prematur, maka block else tidak akan dieksekusi.
+
+## infinite loop ? 
+
+looping forever, loop di mana kondisi akan selalu bernilai truthy, contoh:
+
+```python
+i = 1
+while i <= 10:
+    print(i)
+
+
+i = 1
+while True:
+    print(i)
+    i += 1
+
+i = 1
+while i:
+    print(i)
+    
+```
+
+tiga contoh perulangan di atas merupakan contoh dari infinite loop. pada contoh while pertama, i nya akan selalu bernilai 1, dan menyebabkan kondisinya akan selalu benar. pada contoh kedua, while True selalu bernilai benar. pada contoh ketiga, 1 adalah truthy dalam python. sehingga efeknya sama seperti while pada contoh kedua.
+
+
+
+
+
+
+
+
+
+
+
+
+
