@@ -345,16 +345,3 @@ while i:
 ```
 
 tiga contoh perulangan di atas merupakan contoh dari infinite loop. pada contoh while pertama, i nya akan selalu bernilai 1, dan menyebabkan kondisinya akan selalu benar. pada contoh kedua, while True selalu bernilai benar. pada contoh ketiga, 1 adalah truthy dalam python. sehingga efeknya sama seperti while pada contoh kedua.
-
-
-
-
-
-
-
-
-
-
-
-
-
